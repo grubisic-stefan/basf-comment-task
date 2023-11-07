@@ -83,7 +83,7 @@
   cursor: pointer;
 }
 
-.ReplyButton:focus {
+.ReplyButton:hover {
   color: #0359bd;
 }
 

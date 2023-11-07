@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./Comment.module.css";
 import connection from "../../assets/Group 4.svg";
 import getAvatarSvg from "../../utils/getAvatarSvg";
@@ -9,14 +9,18 @@ const Comment = ({
   isReply,
   setParentCommentId,
   setComment,
+  inputRef,
 }) => {
   const [showReplies, setShowReplies] = useState(false);
 
   const handleReply = (id, user) => {
-    setShowReplies(true);
-    setParentCommentId(id);
+    setShowReplies((prev) => !prev);
+    setParentCommentId(!showReplies ? id : null);
     // should be a chip component or similar
-    setComment("@" + user);
+    setComment(!showReplies ? `@${user} ` : "");
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   };
 
   const formatTimestamp = (timestamp) => {
@@ -70,7 +74,7 @@ const Comment = ({
               className={styles.ReplyButton}
               onClick={() => handleReply(comment.id, comment.author.name)}
             >
-              Reply {numReplies > 0 && !comment.parent_id && `(${numReplies})`}
+              Reply {numReplies > 0 && `(${numReplies})`}
             </button>
           </div>
         </div>
@@ -87,6 +91,7 @@ const Comment = ({
               isReply={true}
               setParentCommentId={setParentCommentId}
               setComment={setComment}
+              inputRef={inputRef}
             />
           </>
         ))}

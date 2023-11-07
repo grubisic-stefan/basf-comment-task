@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Comment from "../Comment/Comment";
 import data from "../../data.json";
 import styles from "./CommentList.module.css";
@@ -8,11 +8,18 @@ const CommentList = () => {
   const [comments, setComments] = useState(data.data.comments);
   const [comment, setComment] = useState("");
   const [parentCommentId, setParentCommentId] = useState(null);
+  const inputRef = useRef(null);
 
   const rootComments = comments.filter((comment) => !comment.parent_id);
 
   const getReplies = (parentId) => {
     return comments.filter((comment) => comment.parent_id === parentId);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleCommentSubmit();
+    }
   };
 
   const handleCommentSubmit = () => {
@@ -30,7 +37,7 @@ const CommentList = () => {
       timestamp: Date.now(),
     };
 
-    setComments([...comments, newComment]);
+    setComments((prevComments) => [...prevComments, newComment]);
     setComment("");
     setParentCommentId(null);
   };
@@ -46,18 +53,21 @@ const CommentList = () => {
             onReply={getReplies}
             setParentCommentId={setParentCommentId}
             setComment={setComment}
+            inputRef={inputRef}
           />
         ))}
       </div>
 
       <div className={styles.InputWrapper}>
         <input
+          ref={inputRef}
           type="text"
           placeholder="...type something"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
+          onKeyDown={handleKeyPress}
         />
-        <button onClick={() => handleCommentSubmit()}>Send</button>
+        <button onClick={handleCommentSubmit}>Send</button>
       </div>
     </div>
   );
