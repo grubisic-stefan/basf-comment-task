@@ -24,12 +24,12 @@
 }
 
 .Comments::-webkit-scrollbar-thumb {
-  background-color: #82878d; /* Color of the thumb */
-  border-radius: 4px; /* Round corners of the thumb */
+  background-color: #82878d;
+  border-radius: 4px;
 }
 
 .Comments::-webkit-scrollbar-track {
-  background-color: #eceef1; /* Color of the track */
+  background-color: #eceef1;
 }
 
 .InputWrapper {
@@ -42,18 +42,18 @@
   justify-self: center;
 }
 
-.InputWrapper textarea {
+.InputWrapper input {
   width: 85%;
   text-align: left;
   resize: none;
   border: none;
 }
 
-.InputWrapper textarea:focus {
+.InputWrapper input:focus {
   outline: none;
 }
 
-.InputWrapper textarea::-webkit-input-placeholder {
+.InputWrapper input::-webkit-input-placeholder {
   color: #82878d;
   font-family: Inter;
   font-size: 10px;
@@ -74,6 +74,7 @@
   font-weight: 700;
   line-height: normal;
   cursor: pointer;
+  height: 34px;
 }
 
 .Timestamp {

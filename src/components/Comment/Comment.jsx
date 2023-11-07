@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Comment.module.css";
 import connection from "../../assets/Group 4.svg";
+import getAvatarSvg from "../../utils/getAvatarSvg";
 
 const Comment = ({
   comment,
@@ -14,6 +15,7 @@ const Comment = ({
   const handleReply = (id, user) => {
     setShowReplies(true);
     setParentCommentId(id);
+    // should be a chip component or similar
     setComment("@" + user);
   };
 
@@ -36,7 +38,9 @@ const Comment = ({
             <img src={connection} alt="connection" />
           </div>
         )}
-        <div className={styles.Avatar}></div>
+        <div className={styles.Avatar}>
+          <img src={getAvatarSvg(comment.author.picture)}></img>
+        </div>
         <div className={styles.ContentContainer}>
           <div className={styles.Content}>
             <p>{comment.author.name}</p>
@@ -66,7 +70,7 @@ const Comment = ({
               className={styles.ReplyButton}
               onClick={() => handleReply(comment.id, comment.author.name)}
             >
-              Reply {numReplies > 0 && `(${numReplies})`}
+              Reply {numReplies > 0 && !comment.parent_id && `(${numReplies})`}
             </button>
           </div>
         </div>

@@ -51,12 +51,13 @@ const CommentList = () => {
       </div>
 
       <div className={styles.InputWrapper}>
-        <textarea
+        <input
+          type="text"
           placeholder="...type something"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-        <button onClick={() => handleCommentSubmit()}>Submit</button>
+        <button onClick={() => handleCommentSubmit()}>Send</button>
       </div>
     </div>
   );

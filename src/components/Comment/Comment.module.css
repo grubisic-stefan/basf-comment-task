@@ -5,7 +5,7 @@
   position: relative;
 }
 
-.CommentContainer img {
+.CommentContainer div:not(.Avatar) img {
   position: relative;
   top: -2em;
   margin-left: 1em;
@@ -17,6 +17,7 @@
   height: 35px;
   border-radius: 50%;
 }
+
 .ContentContainer {
   max-width: 500px;
   min-width: 500px;
