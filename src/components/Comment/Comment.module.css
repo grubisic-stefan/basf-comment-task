@@ -1,0 +1,95 @@
+.CommentContainer {
+  display: flex;
+  gap: 10px;
+  padding: 1em 0;
+  position: relative;
+}
+
+.CommentContainer img {
+  position: relative;
+  top: -2em;
+  margin-left: 1em;
+}
+
+.Avatar {
+  background-color: #b62323;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.ContentContainer {
+  max-width: 500px;
+  min-width: 500px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Content {
+  padding: 1em 1em 0.2em 1em;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.Content > p {
+  text-align: left;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0em;
+  font-family: Inter;
+}
+
+.Content > p:first-of-type {
+  margin: 0;
+  padding: 0;
+  color: #1e1e1e;
+  font-weight: 600;
+}
+
+.Content > p:last-of-type {
+  color: #82878d;
+  font-weight: 400;
+}
+
+.LinkText {
+  color: #023168;
+}
+
+.Info {
+  display: flex;
+  gap: 10px;
+}
+
+.Info > span {
+  color: #82878d;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.ReplyButton {
+  all: unset;
+  color: #023168;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ReplyButton:focus {
+  color: #0359bd;
+}
+
+.Connection {
+  height: 50px;
+  width: 13px;
+  border-color: #82878d;
+  border-left: 10px;
+  border-bottom: 10px;
+}

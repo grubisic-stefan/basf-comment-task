@@ -1,0 +1,87 @@
+.CommentListWrapper {
+  background-color: #eceef1;
+  width: 70%;
+  max-width: 800px;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 5px;
+  padding: 1em 1.5em;
+  flex-direction: column;
+  max-height: 60vh;
+}
+
+.Comments {
+  display: flex;
+  flex-direction: column;
+  max-height: 50vh;
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.Comments::-webkit-scrollbar {
+  width: 4px;
+  stroke: #82878d;
+}
+
+.Comments::-webkit-scrollbar-thumb {
+  background-color: #82878d; /* Color of the thumb */
+  border-radius: 4px; /* Round corners of the thumb */
+}
+
+.Comments::-webkit-scrollbar-track {
+  background-color: #eceef1; /* Color of the track */
+}
+
+.InputWrapper {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 0.5em 1em;
+  justify-self: center;
+}
+
+.InputWrapper textarea {
+  width: 85%;
+  text-align: left;
+  resize: none;
+  border: none;
+}
+
+.InputWrapper textarea:focus {
+  outline: none;
+}
+
+.InputWrapper textarea::-webkit-input-placeholder {
+  color: #82878d;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.InputWrapper button {
+  all: unset;
+  width: 10%;
+  border-radius: 5px;
+  background: #d9d9d9;
+  color: #1e1e1e;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.Timestamp {
+  color: #1e1e1e;
+  font-family: Inter;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 1em 0;
+}
