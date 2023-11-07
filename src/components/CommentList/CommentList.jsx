@@ -31,7 +31,7 @@ const CommentList = () => {
       id: (Math.random() * 100000).toFixed(0),
       parent_id: parentCommentId,
       author: {
-        name: "User",
+        name: "Stefan Grubisic",
       },
       text: comment,
       timestamp: Date.now(),
@@ -67,7 +67,9 @@ const CommentList = () => {
           onChange={(e) => setComment(e.target.value)}
           onKeyDown={handleKeyPress}
         />
-        <button onClick={handleCommentSubmit}>Send</button>
+        <button disabled={!comment} onClick={handleCommentSubmit}>
+          Send
+        </button>
       </div>
     </div>
   );

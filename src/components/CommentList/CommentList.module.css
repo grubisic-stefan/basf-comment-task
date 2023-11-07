@@ -74,6 +74,11 @@
   line-height: normal;
   cursor: pointer;
   height: 34px;
+  text-align: center;
+}
+
+.InputWrapper button:disabled {
+  cursor: default;
 }
 
 .Timestamp {
